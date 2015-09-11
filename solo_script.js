@@ -6,24 +6,12 @@
 // Boo,0.04,56160,2160
 // Scout,0.13,84467,9717.5
 
-// var arrayAtticus = ["Atticus", "2405", "47000", 3];
-// var arrayJem = ["Jem", "62347", "63500", 4];
-// var arrayBoo = ["Boo", "11435", "54000", 3];
-// var arrayScout = ["Scout", "6243", "74750", 5];
+var arrayAtticus = ["Atticus", "2405", "47000", 3];
+var arrayJem = ["Jem", "62347", "63500", 4];
+var arrayBoo = ["Boo", "11435", "54000", 3];
+var arrayScout = ["Scout", "6243", "74750", 5];
 
-function PersonObject(Name, employeeNumber, salary, bonus) {
-  this.Name = Name,
-  this.employeeNumber = employeeNumber,
-  this.salary = salary,
-  this.bonus = bonus
-}
-
-var Atticus = new PersonObject("Atticus", "2405", "47000", 3);
-var Jem = new PersonObject("Jem", "62347", "63500", 4);
-var Boo = new PersonObject("Boo", "11435", "54000", 3);
-var Scout = new PersonObject("Scout", "6243", "74750", 5);
-
-var MultiArray = [Atticus, Jem, Boo, Scout];
+var MultiArray = [arrayAtticus, arrayJem, arrayBoo, arrayScout];
 
 //Create variables used to write to the DOM
 var newEl, newText, position;
@@ -34,6 +22,7 @@ position = document.getElementById('content');
 //Note that the information is not 'clean'
 for(var i = 0; i < MultiArray.length; i++){
 	MultiArray[i] = calculateSTI(MultiArray[i]);   //// should be passing in an index of MultiArray /////////////////////////////
+  //console.log(MultiArray[i]);
   newEl = document.createElement('li');
   MultiArray[i][1] = " " + MultiArray[i][1];    ////  add spaces before the indices 1,2,3 to clean up presentation
   MultiArray[i][2] = " " + MultiArray[i][2];
@@ -46,11 +35,11 @@ for(var i = 0; i < MultiArray.length; i++){
 function calculateSTI(MultiArray){
   var newArray = [];
 
-  newArray[0] = MultiArray.Name;
+  newArray[0] = MultiArray[0];
 
-  var employeeNumber = MultiArray.employeeNumber;
-  var baseSalary = MultiArray.salary;
-  var reviewScore = MultiArray.bonus;
+  var employeeNumber = MultiArray[1];
+  var baseSalary = MultiArray[2];
+  var reviewScore = MultiArray[3];
 
   var bonus = getBaseSTI(reviewScore) + getYearAdjustment(employeeNumber) - getIncomeAdjustment(baseSalary);
   if(bonus > 0.13){
