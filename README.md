@@ -28,3 +28,4 @@ Example, "information,information,information" > "information, information, info
 Style the result to be 'prettier'! Part of making it prettier means that you will want to remove the bullets from 
 the list items. However, in this mode, you are not allowed to change it from 'li' items as it is now.
 # prime_solo_02
+# prime_solo_02_objects
