@@ -35,7 +35,10 @@ position = document.getElementById('content');
 for(var i = 0; i < MultiArray.length; i++){
 	MultiArray[i] = calculateSTI(MultiArray[i]);   //// should be passing in an index of MultiArray /////////////////////////////
   newEl = document.createElement('li');
-	newText = document.createTextNode(MultiArray[i].join(", "));
+  MultiArray[i][1] = " " + MultiArray[i][1];    ////  add spaces before the indices 1,2,3 to clean up presentation
+  MultiArray[i][2] = " " + MultiArray[i][2];
+  MultiArray[i][3] = " " + MultiArray[i][3];
+	newText = document.createTextNode(MultiArray[i]);
 	newEl.appendChild(newText);
 	position.appendChild(newEl);
 }
